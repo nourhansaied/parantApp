@@ -1,0 +1,43 @@
+@import '../../../../../sass/_variable';
+.login-form{
+    padding-top: 2rem;
+    .login-desc{
+        padding: 0 1rem 0 0.5rem;
+        h2{
+            font-size: 25px;
+            
+        }
+        p{
+            color: #7F8C8D;
+            font-size: 15px;
+            span{
+                color: $primaryColor;
+            }
+        }
+        form{
+            .form-label{
+                color: 
+                #7F8C8D;
+                margin-bottom: 10px;
+            }
+            .form-control{
+                margin-bottom: 10px;
+                &:last-of-type{
+                    margin-bottom: 1.25rem;
+                }
+            }
+            .actions-full{
+                p{
+                    margin-bottom: 0;
+                }
+            }
+            .error-msg{
+                text-align: center;
+                margin-top: 15px;
+                font-size: 16px;
+                color: $warning;
+            }
+        }
+    }
+   
+}

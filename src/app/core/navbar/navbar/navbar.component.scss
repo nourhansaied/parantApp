@@ -1,0 +1,18 @@
+@import '../../../../sass/_variable';
+.navbar{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+   ul{
+       &.navbar-nav{
+           align-items: center;
+           a{
+               font-size: 15px;
+               padding: 0.5rem 1rem;
+               text-transform: uppercase;
+           }
+          
+       }
+   } 
+
+
+
+}
