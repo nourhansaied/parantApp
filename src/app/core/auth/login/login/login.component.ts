@@ -14,12 +14,17 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private _AuthService : AuthService
-  ) { }
+  ) { 
+    this._AuthService.setLoginState(true)
+  }
 
   ngOnInit() {
   }
   public onSubmit(form: NgForm): void{
-    console.log(form)
+    // we just route before the calling of API as it alwasy gives error
+    this._AuthService.setLoginState(false)
+    window.localStorage.setItem('login','true')
+    this.router.navigate(['/users']);
     if(form.valid){
       this._AuthService.authanticateUser(form.value).subscribe(response => {
         this.errorMsg = null;
@@ -32,7 +37,6 @@ export class LoginComponent implements OnInit {
         this.errorMsg = error['error']['error'];
       });
     }
-    // this.router.navigate([`users`]);
    
   }
 }

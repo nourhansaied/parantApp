@@ -1,0 +1,22 @@
+@import '../../../../../sass/variable';
+.user-card{
+    padding: 10px 0;
+    border-bottom: 1px solid $darkGray;
+    cursor: pointer;
+    .user-data{
+        padding: 10px;
+        .avtar{
+            max-width: 60px;
+            border-radius: 100%;
+            margin-right: 15px;
+        }
+        .actions{
+            button{
+                margin-left: 15px;
+            }
+        }
+        &:hover {
+            background-color: $lightPurble;
+        }
+    }
+}

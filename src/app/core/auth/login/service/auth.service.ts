@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { QueryService } from '../../../../shared/services/query.service';
-import { Observable } from '../../../../../../node_modules/rxjs';
+import { Observable, BehaviorSubject } from '../../../../../../node_modules/rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  private loginUser: BehaviorSubject<any> = new BehaviorSubject(true);
   constructor(
     private queryService: QueryService
   ) { }
@@ -19,5 +19,11 @@ export class AuthService {
 
   setUserToken() {
     this.queryService.setHeader();
+  }
+  setLoginState(state){
+    this.loginUser.next(state);
+  }
+  getLoginState() {
+    return this.loginUser.asObservable();
   }
 }
